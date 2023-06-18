@@ -85,6 +85,8 @@ function gameOver() {
             if(localStorage.getItem('score') && localStorage.getItem('score') < score) {
                 localStorage.setItem('score', score);
                 console.log(localStorage.getItem('score') < score);
+            } else {
+                localStorage.setItem('score', 0);
             }
             return;
         }
@@ -99,6 +101,8 @@ function gameOver() {
         if(localStorage.getItem('score') && localStorage.getItem('score') < score) {
             localStorage.setItem('score', score);
             console.log(localStorage.getItem('score') < score);
+        } else {
+            localStorage.setItem('score', 0);
         }
         return;
     }
