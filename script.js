@@ -14,6 +14,10 @@ let tail = [[snakeX , 10], [snakeX - 1, 10]];
 let score = 0;
 
 scoreElement.innerHTML = `Score: ${score}`;
+
+if(!localStorage.getItem('score')) {
+    localStorage.setItem('score', 0)
+}
 recordScore.innerHTML =  localStorage.getItem('score') ? `High-score: ${localStorage.getItem('score')}` : 'High-score: 0'
 
 const changeFoodPosition = () => {
@@ -85,8 +89,6 @@ function gameOver() {
             if(localStorage.getItem('score') && localStorage.getItem('score') < score) {
                 localStorage.setItem('score', score);
                 console.log(localStorage.getItem('score') < score);
-            } else {
-                localStorage.setItem('score', 0);
             }
             return;
         }
@@ -101,8 +103,6 @@ function gameOver() {
         if(localStorage.getItem('score') && localStorage.getItem('score') < score) {
             localStorage.setItem('score', score);
             console.log(localStorage.getItem('score') < score);
-        } else {
-            localStorage.setItem('score', 0);
         }
         return;
     }
